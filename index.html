@@ -199,24 +199,37 @@
                 </div>
                 
                 <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" id="phone" name="phone" placeholder="Phone Number">
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" placeholder="How can we help you?" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
-                </div>
-            </div>
+    <form action="https://formsubmit.co/info@jpplanningsolutions.com" method="POST">
+        <!-- Configurações do FormSubmit -->
+        <input type="hidden" name="_next" value="https://www.jpplanningsolutions.com/thank-you.html">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="box">
+        <input type="hidden" name="_subject" value="New Contact from J&P Website">
+        
+        <!-- Cópia para o usuário -->
+        <input type="hidden" name="_replyto" value="%email%">
+        <input type="hidden" name="_cc" value="%email%">
+        
+        <!-- Filtro de spam -->
+        <input type="hidden" name="_blacklist" value="spam, bad word, promotional">
+        <input type="text" name="_honey" style="display:none">
+        
+        <!-- Campos do Formulário -->
+        <div class="form-group">
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
         </div>
+        <div class="form-group">
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+        </div>
+        <div class="form-group">
+            <input type="tel" id="phone" name="phone" placeholder="Phone Number">
+        </div>
+        <div class="form-group">
+            <textarea id="message" name="message" placeholder="How can we help you?" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+</div>
     </section>
 
     <footer>
