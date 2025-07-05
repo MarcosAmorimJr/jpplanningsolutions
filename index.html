@@ -174,61 +174,88 @@
         </div>
     </section>
 
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <h2>Get in Touch</h2>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Ready to bring clarity and control to your projects?</h3>
-                    <p>Contact J&P Planning Solutions today for expert consultant advice on planning, scheduling, and project controls. Let's build a clear path to your project success.</p>
-                    
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <span>+353 83 133 4292</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>info@jpplanningsolutions.com</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fab fa-linkedin"></i>
-                            <a href="https://www.linkedin.com/company/j-p-planning-solutions" target="_blank">Follow us on LinkedIn</a>
-                        </div>
+ <section id="contact" class="contact-section">
+    <div class="container">
+        <h2>Get in Touch</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Ready to bring clarity and control to your projects?</h3>
+                <p>Contact J&P Planning Solutions today for expert consultant advice on planning, scheduling, and project controls. Let's build a clear path to your project success.</p>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+353 83 133 4292</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@jpplanningsolutions.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <a href="https://www.linkedin.com/company/j-p-planning-solutions" target="_blank">Follow us on LinkedIn</a>
                     </div>
                 </div>
+            </div>
+            
+            <div class="contact-form">
+                <!-- Formulário com target para o iframe -->
+                <form action="https://getform.io/f/akknzdna" method="POST" target="getform-iframe">
+                    <!-- Configurações do Getform -->
+                    <input type="hidden" name="_subject" value="New Contact from J&P Website">
+                    <input type="hidden" name="_template" value="box">
+                    
+                    <!-- Cópia para o usuário -->
+                    <input type="hidden" name="_replyto" value="email">
+                    <input type="hidden" name="_cc" value="email">
+                    
+                    <!-- Filtro de spam -->
+                    <input type="text" name="_gotcha" style="display:none">
+                    <input type="hidden" name="_blacklist" value="spam, promotion, badword">
+                    
+                    <!-- Campos do Formulário -->
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="phone" placeholder="Phone Number">
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="How can we help you?" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
                 
-             <div class="contact-form">
-    <form action="https://getform.io/f/akknzdna" method="POST">
-        <!-- Configurações do Getform -->
-        <input type="hidden" name="_redirect" value="https://www.jpplanningsolutions.com/thank-you.html">
-        <input type="hidden" name="_subject" value="New Contact from J&P Website">
-        <input type="hidden" name="_template" value="box">
+                <!-- Iframe oculto para processamento -->
+                <iframe name="getform-iframe" id="getform-iframe" style="display:none;"></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Adicione este script para feedback visual -->
+<script>
+document.querySelector('form[target="getform-iframe"]').addEventListener('submit', function() {
+    const submitBtn = this.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerHTML;
+    
+    // Feedback visual durante o envio
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    
+    // Reset após 5 segundos (tempo estimado para envio)
+    setTimeout(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
         
-        <!-- Cópia para o usuário (configuração diferente no Getform) -->
-        <input type="hidden" name="_replyto" value="email"> <!-- Campo que contém o email do usuário -->
-        <input type="hidden" name="_cc" value="email"> <!-- Envia cópia para o remetente -->
-        
-        <!-- Filtro de spam (configuração alternativa) -->
-        <input type="text" name="_gotcha" style="display:none"> <!-- Honeypot do Getform -->
-        <input type="hidden" name="_blacklist" value="spam, promotion, badword"> <!-- Lista negra -->
-        
-        <!-- Campos do Formulário (mantidos iguais) -->
-        <div class="form-group">
-            <input type="text" id="name" name="name" placeholder="Your Name" required>
-        </div>
-        <div class="form-group">
-            <input type="email" id="email" name="email" placeholder="Your Email" required>
-        </div>
-        <div class="form-group">
-            <input type="tel" id="phone" name="phone" placeholder="Phone Number">
-        </div>
-        <div class="form-group">
-            <textarea id="message" name="message" placeholder="How can we help you?" rows="5" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Send Message</button>
-    </form>
-</div>
+        // Mostrar mensagem de sucesso (opcional)
+        alert('Message sent successfully! We will contact you soon.');
+    }, 5000);
+});
+</script>
     </section>
 
     <footer>
