@@ -198,23 +198,22 @@
                     </div>
                 </div>
                 
-                <div class="contact-form">
-    <form action="https://formsubmit.co/info@jpplanningsolutions.com" method="POST">
-        <!-- Configurações do FormSubmit -->
-        <input type="hidden" name="_next" value="https://www.jpplanningsolutions.com/thank-you.html">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="box">
+             <div class="contact-form">
+    <form action="https://getform.io/f/akknzdna" method="POST">
+        <!-- Configurações do Getform -->
+        <input type="hidden" name="_redirect" value="https://www.jpplanningsolutions.com/thank-you.html">
         <input type="hidden" name="_subject" value="New Contact from J&P Website">
+        <input type="hidden" name="_template" value="box">
         
-        <!-- Cópia para o usuário -->
-        <input type="hidden" name="_replyto" value="%email%">
-        <input type="hidden" name="_cc" value="%email%">
+        <!-- Cópia para o usuário (configuração diferente no Getform) -->
+        <input type="hidden" name="_replyto" value="email"> <!-- Campo que contém o email do usuário -->
+        <input type="hidden" name="_cc" value="email"> <!-- Envia cópia para o remetente -->
         
-        <!-- Filtro de spam -->
-        <input type="hidden" name="_blacklist" value="spam, bad word, promotional">
-        <input type="text" name="_honey" style="display:none">
+        <!-- Filtro de spam (configuração alternativa) -->
+        <input type="text" name="_gotcha" style="display:none"> <!-- Honeypot do Getform -->
+        <input type="hidden" name="_blacklist" value="spam, promotion, badword"> <!-- Lista negra -->
         
-        <!-- Campos do Formulário -->
+        <!-- Campos do Formulário (mantidos iguais) -->
         <div class="form-group">
             <input type="text" id="name" name="name" placeholder="Your Name" required>
         </div>
